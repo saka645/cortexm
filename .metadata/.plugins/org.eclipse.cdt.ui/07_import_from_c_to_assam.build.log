@@ -1,0 +1,10 @@
+17:08:17 **** Incremental Build of configuration Debug for project 07_import_from_c_to_assam ****
+make -j4 all 
+arm-none-eabi-size   07_import_from_c_to_assam.elf 
+   text	   data	    bss	    dec	    hex	filename
+    492	      8	   1568	   2068	    814	07_import_from_c_to_assam.elf
+Finished building: default.size.stdout
+ 
+
+17:08:18 Build Finished. 0 errors, 0 warnings. (took 595ms)
+

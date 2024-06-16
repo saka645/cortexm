@@ -1,0 +1,12 @@
+11:57:17 **** Incremental Build of configuration Debug for project 13_SolvingComplexProblem ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m0 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o" "../Src/main.s"
+../Src/main.s: Assembler messages:
+../Src/main.s:13: Error: shift expression expected -- `adds r0,r0,r1,lsl,#3'
+../Src/main.s:19: Error: selected processor does not support `mla r0,r1,r2,r0' in Thumb mode
+../Src/main.s:23: Error: garbage following instruction -- `movs r0,r0,asr#2 please correct it'
+make: *** [Src/subdir.mk:29: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+11:57:18 Build Failed. 4 errors, 0 warnings. (took 1s.3ms)
+

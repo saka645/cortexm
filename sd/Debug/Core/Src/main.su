@@ -1,0 +1,12 @@
+main.c:60:13:SPI_TxByte	16	static
+main.c:67:16:SPI_RxByte	24	static
+main.c:78:13:SELECT	8	static
+main.c:84:13:DESELECT	8	static
+main.c:88:6:usart_putch	16	static
+main.c:92:6:init_devices	8	static
+main.c:123:5:main	8	static
+main.c:170:6:SystemClock_Config	96	static
+main.c:215:13:MX_SPI1_Init	8	static
+main.c:255:13:MX_USART1_UART_Init	8	static
+main.c:290:13:MX_GPIO_Init	48	static
+main.c:335:6:Error_Handler	8	static,ignoring_inline_asm

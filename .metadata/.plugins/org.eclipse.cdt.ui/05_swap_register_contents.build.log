@@ -1,0 +1,10 @@
+17:45:19 **** Incremental Build of configuration Debug for project 05_swap_register_contents ****
+make -j4 all 
+arm-none-eabi-size   05_swap_register_contents.elf 
+   text	   data	    bss	    dec	    hex	filename
+    464	      8	   1568	   2040	    7f8	05_swap_register_contents.elf
+Finished building: default.size.stdout
+ 
+
+17:45:19 Build Finished. 0 errors, 0 warnings. (took 422ms)
+

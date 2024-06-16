@@ -1,0 +1,29 @@
+10:34:47 **** Incremental Build of configuration Debug for project access_levels ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32F030R8Tx -DSTM32 -DSTM32F0 -DSTM32F0308_DISCO -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:43:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   43 |  printf("in thread mode: before interrupt\n");
+      |  ^~~~~~
+../Src/main.c:43:2: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include <stdint.h>
+  +++ |+#include <stdio.h>
+   21 | 
+arm-none-eabi-gcc -o "access_levels.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\saka6\STM32CubeIDE\workspace_1.6.1\access_levels\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="access_levels.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: access_levels.elf
+ 
+arm-none-eabi-objdump -h -S  access_levels.elf  > "access_levels.list"
+arm-none-eabi-objcopy  -O binary  access_levels.elf  "access_levels.bin"
+arm-none-eabi-size   access_levels.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3628	    108	   1596	   5332	   14d4	access_levels.elf
+Finished building: default.size.stdout
+Finished building: access_levels.bin
+Finished building: access_levels.list
+ 
+ 
+ 
+
+10:34:49 Build Finished. 0 errors, 2 warnings. (took 1s.703ms)
+

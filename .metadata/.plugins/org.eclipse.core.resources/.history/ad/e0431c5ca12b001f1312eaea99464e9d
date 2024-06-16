@@ -1,0 +1,26 @@
+.section .data
+
+SIGN_DATA:
+.byte 13
+.byte -10
+.byte 9
+.byte 14
+.byte -18
+.byte -9
+.byte 12
+.byte -19
+.byte 16
+
+.syntax unified
+.cpu cortex-m0
+.thumb
+.section .text
+.global __main
+
+__main:
+
+
+stop:
+    b stop             // Infinite loop to stop the program
+    .align
+    .end

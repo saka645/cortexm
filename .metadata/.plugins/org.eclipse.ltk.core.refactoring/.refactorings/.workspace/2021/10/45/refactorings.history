@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;rtos5_queue&apos; to &apos;mutex&apos;" description="Rename resource &apos;rtos5_queue&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/rtos5_queue" name="mutex" stamp="1635663643614" updateReferences="true"/>
+</session>

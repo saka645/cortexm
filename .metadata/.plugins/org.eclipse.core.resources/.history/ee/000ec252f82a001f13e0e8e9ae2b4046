@@ -1,0 +1,15 @@
+
+.syntax unified
+.cpu cortex-m0
+.fpu softvfp
+.thumb
+.section .text
+.global __main
+
+__main:
+
+
+stop:
+	b	stop
+	.align
+	.end

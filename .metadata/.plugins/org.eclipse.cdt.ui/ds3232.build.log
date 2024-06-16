@@ -1,0 +1,94 @@
+11:16:56 **** Incremental Build of configuration Debug for project ds3232 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f0xx.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f0xx.d" -MT"Core/Src/system_stm32f0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f0xx.o"
+../Core/Src/stm32f0xx_it.c: In function 'EXTI0_IRQHandler':
+../Core/Src/stm32f0xx_it.c:163:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  163 |  printf("ISO8601 FORMAT: %04d-%02d-%02dT%02d:%02d:%02d %s %d.%02d\n", DS3231_GetYear(),
+      |  ^~~~~~
+../Core/Src/stm32f0xx_it.c:163:2: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/stm32f0xx_it.c:24:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   23 | #include "stm32f0xx_it.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/stm32f0xx_it.c:163:71: warning: implicit declaration of function 'DS3231_GetYear' [-Wimplicit-function-declaration]
+  163 |  printf("ISO8601 FORMAT: %04d-%02d-%02dT%02d:%02d:%02d %s %d.%02d\n", DS3231_GetYear(),
+      |                                                                       ^~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:164:4: warning: implicit declaration of function 'DS3231_GetMonth' [-Wimplicit-function-declaration]
+  164 |    DS3231_GetMonth(), DS3231_GetDate(), DS3231_GetHour(), DS3231_GetMinute(), DS3231_GetSecond(), day[DS3231_GetDayOfWeek()-1],
+      |    ^~~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:164:23: warning: implicit declaration of function 'DS3231_GetDate' [-Wimplicit-function-declaration]
+  164 |    DS3231_GetMonth(), DS3231_GetDate(), DS3231_GetHour(), DS3231_GetMinute(), DS3231_GetSecond(), day[DS3231_GetDayOfWeek()-1],
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:164:41: warning: implicit declaration of function 'DS3231_GetHour' [-Wimplicit-function-declaration]
+  164 |    DS3231_GetMonth(), DS3231_GetDate(), DS3231_GetHour(), DS3231_GetMinute(), DS3231_GetSecond(), day[DS3231_GetDayOfWeek()-1],
+      |                                         ^~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:164:59: warning: implicit declaration of function 'DS3231_GetMinute' [-Wimplicit-function-declaration]
+  164 |    DS3231_GetMonth(), DS3231_GetDate(), DS3231_GetHour(), DS3231_GetMinute(), DS3231_GetSecond(), day[DS3231_GetDayOfWeek()-1],
+      |                                                           ^~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'SystemClock_Config':
+../Core/Src/main.c:190:2: warning: implicit declaration of function '__HAL_PWR_VOLTAGESCALING_CONFIG' [-Wimplicit-function-declaration]
+  190 |  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:164:79: warning: implicit declaration of function 'DS3231_GetSecond' [-Wimplicit-function-declaration]
+  164 |    DS3231_GetMonth(), DS3231_GetDate(), DS3231_GetHour(), DS3231_GetMinute(), DS3231_GetSecond(), day[DS3231_GetDayOfWeek()-1],
+      |                                                                               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:190:34: error: 'PWR_REGULATOR_VOLTAGE_SCALE2' undeclared (first use in this function)
+  190 |  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:190:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:202:28: error: 'RCC_CLOCKTYPE_PCLK2' undeclared (first use in this function); did you mean 'RCC_CLOCKTYPE_PCLK1'?
+  202 |    | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+      |                            ^~~~~~~~~~~~~~~~~~~
+      |                            RCC_CLOCKTYPE_PCLK1
+../Core/Src/main.c:206:20: error: 'RCC_ClkInitTypeDef' {aka 'struct <anonymous>'} has no member named 'APB2CLKDivider'; did you mean 'APB1CLKDivider'?
+  206 |  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+      |                    ^~~~~~~~~~~~~~
+      |                    APB1CLKDivider
+../Core/Src/main.c: In function 'MX_I2C1_Init':
+../Core/Src/main.c:228:12: error: 'I2C_InitTypeDef' {aka 'struct <anonymous>'} has no member named 'ClockSpeed'
+  228 |  hi2c1.Init.ClockSpeed = 100000;
+      |            ^
+../Core/Src/stm32f0xx_it.c:164:103: warning: implicit declaration of function 'DS3231_GetDayOfWeek' [-Wimplicit-function-declaration]
+  164 |    DS3231_GetMonth(), DS3231_GetDate(), DS3231_GetHour(), DS3231_GetMinute(), DS3231_GetSecond(), day[DS3231_GetDayOfWeek()-1],
+      |                                                                                                       ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:229:12: error: 'I2C_InitTypeDef' {aka 'struct <anonymous>'} has no member named 'DutyCycle'
+  229 |  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+      |            ^
+../Core/Src/stm32f0xx_it.c:165:4: warning: implicit declaration of function 'DS3231_GetTemperatureInteger' [-Wimplicit-function-declaration]
+  165 |    DS3231_GetTemperatureInteger(), DS3231_GetTemperatureFraction());
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:229:25: error: 'I2C_DUTYCYCLE_2' undeclared (first use in this function)
+  229 |  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:165:36: warning: implicit declaration of function 'DS3231_GetTemperatureFraction' [-Wimplicit-function-declaration]
+  165 |    DS3231_GetTemperatureInteger(), DS3231_GetTemperatureFraction());
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:167:5: warning: implicit declaration of function 'DS3231_IsAlarm1Triggered' [-Wimplicit-function-declaration]
+  167 |  if(DS3231_IsAlarm1Triggered()){
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:286:2: warning: implicit declaration of function '__HAL_RCC_GPIOH_CLK_ENABLE' [-Wimplicit-function-declaration]
+  286 |  __HAL_RCC_GPIOH_CLK_ENABLE();
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:307:23: error: 'EXTI0_IRQn' undeclared (first use in this function); did you mean 'EXTI0_1_IRQn'?
+  307 |  HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 0);
+      |                       ^~~~~~~~~~
+      |                       EXTI0_1_IRQn
+../Core/Src/stm32f0xx_it.c:169:11: warning: implicit declaration of function 'DS3231_IsAlarm2Triggered' [-Wimplicit-function-declaration]
+  169 |  }else if(DS3231_IsAlarm2Triggered()){
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:39: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/stm32f0xx_it.c:170:3: warning: implicit declaration of function 'DS3231_ClearAlarm2Flag' [-Wimplicit-function-declaration]
+  170 |   DS3231_ClearAlarm2Flag();
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/stm32f0xx_it.c:174:2: warning: implicit declaration of function 'DS3231_ClearAlarm1Flag' [-Wimplicit-function-declaration]
+  174 |  DS3231_ClearAlarm1Flag();
+      |  ^~~~~~~~~~~~~~~~~~~~~~
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+11:16:58 Build Failed. 9 errors, 17 warnings. (took 1s.828ms)
+

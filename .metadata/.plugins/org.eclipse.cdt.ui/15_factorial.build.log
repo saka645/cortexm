@@ -1,0 +1,12 @@
+15:08:55 **** Incremental Build of configuration Debug for project 15_factorial ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m0 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o" "../Src/main.s"
+../Src/main.s: Assembler messages:
+../Src/main.s:19: Error: selected processor does not support `ittt GT' in Thumb mode
+../Src/main.s:20: Error: thumb conditional instruction should be in IT block -- `mulgt r7,r6,r7'
+../Src/main.s:21: Error: lo register required -- `subgt r6,r6,#1'
+make: *** [Src/subdir.mk:29: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+15:08:55 Build Failed. 4 errors, 0 warnings. (took 516ms)
+

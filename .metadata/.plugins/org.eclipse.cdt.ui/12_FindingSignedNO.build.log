@@ -1,0 +1,10 @@
+11:34:33 **** Incremental Build of configuration Debug for project 12_FindingSignedNO ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m0 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o" "../Src/main.s"
+../Src/main.s: Assembler messages:
+../Src/main.s:23: Error: cannot honor width suffix -- `ldrsb r0,[r4,#0]'
+make: *** [Src/subdir.mk:29: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+11:34:33 Build Failed. 2 errors, 0 warnings. (took 423ms)
+

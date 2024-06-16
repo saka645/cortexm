@@ -1,0 +1,44 @@
+.section .data
+
+SIGN_DATA:
+.byte +13
+.byte -10
+.byte +9
+.byte +14
+.byte -18
+.byte -9
+.byte +12
+.byte -19
+.byte +16
+
+
+
+
+
+.syntax unified
+.cpu cortex-m0
+.fpu softvfp
+.thumb
+.section .text
+.global __main
+
+__main:
+	//load data address in r0//
+	ldr r0,=SIGN_DATA
+	movs r3,#9
+	movs r2,#0
+l:
+	//load a signed byte from address r0//
+	ldrsb r1,r1,[r0]
+	adds r2,r2,r1
+	adds r0,r0,#1
+	subs r3,r3,#1
+
+	//branch to top if result is not equal to 0//
+	bne l
+
+
+stop:
+	b	stop
+	.align
+	.end

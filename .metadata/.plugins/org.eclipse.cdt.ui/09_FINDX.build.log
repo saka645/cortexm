@@ -1,0 +1,10 @@
+12:42:26 **** Incremental Build of configuration Debug for project 09_FINDX ****
+make -j4 all 
+arm-none-eabi-size   09_FINDX.elf 
+   text	   data	    bss	    dec	    hex	filename
+    488	      8	   1568	   2064	    810	09_FINDX.elf
+Finished building: default.size.stdout
+ 
+
+12:42:26 Build Finished. 0 errors, 0 warnings. (took 333ms)
+

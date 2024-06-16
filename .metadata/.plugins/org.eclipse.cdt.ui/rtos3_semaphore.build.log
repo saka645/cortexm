@@ -1,0 +1,10 @@
+15:39:02 **** Incremental Build of configuration Debug for project rtos3_semaphore ****
+make -j4 all 
+arm-none-eabi-size   rtos3_semaphore.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18044	     20	   5780	  23844	   5d24	rtos3_semaphore.elf
+Finished building: default.size.stdout
+ 
+
+15:39:02 Build Finished. 0 errors, 0 warnings. (took 781ms)
+

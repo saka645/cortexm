@@ -1,0 +1,10 @@
+15:40:23 **** Incremental Build of configuration Debug for project 11_AddingSignedNumbers ****
+make -j4 all 
+arm-none-eabi-size   11_AddingSignedNumbers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    468	     20	   1564	   2052	    804	11_AddingSignedNumbers.elf
+Finished building: default.size.stdout
+ 
+
+15:40:23 Build Finished. 0 errors, 0 warnings. (took 339ms)
+

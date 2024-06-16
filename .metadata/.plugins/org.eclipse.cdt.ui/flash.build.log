@@ -1,0 +1,85 @@
+18:21:54 **** Incremental Build of configuration Debug for project flash ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/FlASH_PAGE_F1.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/FlASH_PAGE_F1.d" -MT"Core/Src/FlASH_PAGE_F1.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/FlASH_PAGE_F1.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+../Core/Src/main.c:47:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'I2C_HandleTypeDef'?
+   47 | UART_HandleTypeDef huart1;
+      | ^~~~~~~~~~~~~~~~~~
+      | I2C_HandleTypeDef
+../Core/Src/main.c: In function 'SystemClock_Config':
+../Core/Src/main.c:153:20: error: 'RCC_OscInitTypeDef' {aka 'struct <anonymous>'} has no member named 'HSEPredivValue'
+  153 |   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+      |                    ^
+../Core/Src/main.c:153:38: error: 'RCC_HSE_PREDIV_DIV1' undeclared (first use in this function); did you mean 'RCC_PREDIV_DIV1'?
+  153 |   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+      |                                      ^~~~~~~~~~~~~~~~~~~
+      |                                      RCC_PREDIV_DIV1
+../Core/Src/main.c:153:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:165:52: error: 'RCC_CLOCKTYPE_PCLK2' undeclared (first use in this function); did you mean 'RCC_CLOCKTYPE_PCLK1'?
+  165 |                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+      |                                                    ^~~~~~~~~~~~~~~~~~~
+      |                                                    RCC_CLOCKTYPE_PCLK1
+../Core/Src/main.c:169:21: error: 'RCC_ClkInitTypeDef' {aka 'struct <anonymous>'} has no member named 'APB2CLKDivider'; did you mean 'APB1CLKDivider'?
+  169 |   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+      |                     ^~~~~~~~~~~~~~
+      |                     APB1CLKDivider
+../Core/Src/main.c:171:47: error: 'FLASH_LATENCY_2' undeclared (first use in this function); did you mean 'FLASH_LATENCY_1'?
+  171 |   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+      |                                               ^~~~~~~~~~~~~~~
+      |                                               FLASH_LATENCY_1
+../Core/Src/main.c: In function 'MX_USART1_UART_Init':
+../Core/Src/main.c:192:9: error: request for member 'Instance' in something not a structure or union
+  192 |   huart1.Instance = USART1;
+      |         ^
+../Core/Src/main.c:193:9: error: request for member 'Init' in something not a structure or union
+  193 |   huart1.Init.BaudRate = 115200;
+      |         ^
+../Core/Src/main.c:194:9: error: request for member 'Init' in something not a structure or union
+  194 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |         ^
+../Core/Src/main.c:194:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  194 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:195:9: error: request for member 'Init' in something not a structure or union
+  195 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |         ^
+../Core/Src/main.c:195:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  195 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:196:9: error: request for member 'Init' in something not a structure or union
+  196 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |         ^
+../Core/Src/main.c:196:24: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  196 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |                        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:197:9: error: request for member 'Init' in something not a structure or union
+  197 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |         ^
+../Core/Src/main.c:197:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  197 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:9: error: request for member 'Init' in something not a structure or union
+  198 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |         ^
+../Core/Src/main.c:198:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  198 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:199:9: error: request for member 'Init' in something not a structure or union
+  199 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |         ^
+../Core/Src/main.c:199:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function); did you mean 'USART_OVERSAMPLING_16'?
+  199 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+      |                              USART_OVERSAMPLING_16
+../Core/Src/main.c:200:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_I2C_Init'? [-Wimplicit-function-declaration]
+  200 |   if (HAL_UART_Init(&huart1) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_I2C_Init
+make: *** [Core/Src/subdir.mk:39: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+18:22:06 Build Failed. 22 errors, 1 warnings. (took 11s.985ms)
+

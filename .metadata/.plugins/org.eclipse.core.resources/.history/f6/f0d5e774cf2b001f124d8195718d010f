@@ -1,0 +1,18 @@
+.equ RCC_BASE, 		0x40021000
+.equ GPIOC_BASE, 	0x48000800
+
+.syntax unified
+.cpu cortex-m0
+.thumb
+.section .text
+.global __main
+
+__main:
+
+
+
+
+stop:
+    b stop             // Infinite loop to stop the program
+    .align
+    .end

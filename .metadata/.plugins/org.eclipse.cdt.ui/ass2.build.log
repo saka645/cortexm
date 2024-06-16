@@ -1,0 +1,17 @@
+22:38:39 **** Build of configuration Debug for project ass2 ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401vctx.d" -MT"Startup/startup_stm32f401vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401vctx.o" "../Startup/startup_stm32f401vctx.s"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o" "../Src/main.s"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401C_DISCO -DSTM32F4 -DSTM32F401VCTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401C_DISCO -DSTM32F4 -DSTM32F401VCTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.s: Assembler messages:
+../Src/main.s:8: Error: cannot honor width suffix -- `mov r5,#45'
+../Src/main.s:9: Error: cannot honor width suffix -- `mov r3,#45'
+../Src/main.s:10: Error: cannot honor width suffix -- `add r6,r5,r3'
+../Src/main.s:15: Error: bad instruction `end'
+make: *** [Src/subdir.mk:29: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+22:38:46 Build Failed. 6 errors, 0 warnings. (took 7s.384ms)
+

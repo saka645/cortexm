@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;1_usingStartup&apos;" deleteContents="true" description="Delete resource &apos;1_usingStartup&apos;" element1="/1_usingStartup" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1717306331161"/>&#x0A;<refactoring comment="Delete resource &apos;02_No_startup_file/Startup/startup_stm32f030r8tx.s&apos;" deleteContents="false" description="Delete resource &apos;02_No_startup_file/Startup/startup_stm32f030r8tx.s&apos;" element1="/02_No_startup_file/Startup/startup_stm32f030r8tx.s" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1717312453817"/>
+</session>

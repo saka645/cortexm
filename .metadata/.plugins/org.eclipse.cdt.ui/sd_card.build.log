@@ -1,0 +1,43 @@
+15:29:29 **** Incremental Build of configuration Debug for project sd_card ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:101:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  101 |  sprintf (buffer, "%d. %u\n", 0,2);
+      |  ^~~~~~~
+../Core/Src/main.c:101:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:23:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   22 | #include "fatfs.h"
+  +++ |+#include <stdio.h>
+   23 | 
+../Core/Src/main.c:102:2: warning: implicit declaration of function 'Mount_SD' [-Wimplicit-function-declaration]
+  102 |  Mount_SD("/");
+      |  ^~~~~~~~
+../Core/Src/main.c:103:2: warning: implicit declaration of function 'Update_File' [-Wimplicit-function-declaration]
+  103 |  Update_File("ADC_DATA.TXT", buffer);
+      |  ^~~~~~~~~~~
+../Core/Src/main.c:106:2: warning: implicit declaration of function 'vPortFree' [-Wimplicit-function-declaration]
+  106 |  vPortFree(buffer);
+      |  ^~~~~~~~~
+../Core/Src/main.c:107:2: warning: implicit declaration of function 'Unmount_SD' [-Wimplicit-function-declaration]
+  107 |  Unmount_SD("/");
+      |  ^~~~~~~~~~
+arm-none-eabi-gcc -o "sd_card.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\saka6\STM32CubeIDE\workspace_1.6.1\sd_card\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="sd_card.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: Core/Src/fatfs_sd.o: in function `SD_ReadyWait':
+C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/fatfs_sd.c:116: undefined reference to `Timer2'
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: Core/Src/fatfs_sd.o: in function `SD_RxDataBlock':
+C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/fatfs_sd.c:203: undefined reference to `Timer1'
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: Core/Src/fatfs_sd.o: in function `SD_disk_initialize':
+C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/fatfs_sd.c:404: undefined reference to `Timer1'
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: Core/Src/main.o: in function `main':
+C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/main.c:102: undefined reference to `Mount_SD'
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/main.c:103: undefined reference to `Update_File'
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/main.c:105: undefined reference to `Update_File'
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/main.c:106: undefined reference to `vPortFree'
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/sd_card/Debug/../Core/Src/main.c:107: undefined reference to `Unmount_SD'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:69: sd_card.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+15:29:30 Build Failed. 13 errors, 6 warnings. (took 1s.562ms)
+

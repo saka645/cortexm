@@ -1,0 +1,4 @@
+sdsc.c:5:15:sdsc_command	32	static
+sdsc.c:28:6:sdsc_init	8	static
+sdsc.c:42:6:read_single_block	32	static
+sdsc.c:58:15:write_single_block	32	static

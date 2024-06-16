@@ -1,0 +1,39 @@
+.equ RCC_BASE, 				0x40021000
+.equ AHB_ENR_OFFSET, 		0x14
+.equ RCC_AHBENR,			(RCC_BASE + AHB_ENR_OFFSET)
+.equ GPIOC_BASE, 			0x48000800
+
+.equ GPIOC_EN, 				(1<<19)
+.equ GPIOC_ODR8, 			(1<<8)
+
+.equ GPIOC_OFFSET, 			0x00
+.equ GPIOC_MODER,			(GPIOC_BASE + GPIOC_OFFSET)
+.equ GPIOC8_GPIO, 			(1<<16)
+
+.equ GPIOC_ODR_OFFSET, 		0x14
+.equ GPIOC_ODR,				(GPIOC_BASE + GPIOC_ODR_OFFSET)
+
+.syntax unified
+.cpu cortex-m0
+.thumb
+.section .text
+.global __main
+
+__main:
+	//LOAD AHB REG IN R0
+	ldr r0,=RCC_AHBENR
+	//load address found in r0 to r1
+	ldr r1,[r0]
+	//enable gpioc//
+	//; Set bit 19
+	movs r2,#1          ; Load 1 into R2
+	LSLS R2, #19         ; Shift left by 19 to position bit 19
+	ORRS R1, R1, R2      ; Set bit 19 in the value
+	STR R1, [R0]         ; Store the modified value back to the memory address)
+
+
+
+stop:
+    b stop             // Infinite loop to stop the program
+    .align
+    .end

@@ -1,0 +1,6 @@
+int num;
+
+int Adder(void)
+{
+	return (num+32);
+}

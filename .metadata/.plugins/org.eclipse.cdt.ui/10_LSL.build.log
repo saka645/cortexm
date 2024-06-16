@@ -1,0 +1,10 @@
+14:54:05 **** Incremental Build of configuration Debug for project 10_LSL ****
+make -j4 all 
+arm-none-eabi-size   10_LSL.elf 
+   text	   data	    bss	    dec	    hex	filename
+    452	      8	   1568	   2028	    7ec	10_LSL.elf
+Finished building: default.size.stdout
+ 
+
+14:54:05 Build Finished. 0 errors, 0 warnings. (took 375ms)
+

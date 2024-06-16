@@ -1,0 +1,7 @@
+fat32.c:5:8:read_sector	16	static
+fat32.c:11:15:fat32_init	24	static
+fat32.c:49:15:first_sector_of_cluster	16	static
+fat32.c:54:15:first_cluster_of_file	48	static
+fat32.c:94:15:next_cluster_number	48	static
+fat32.c:120:15:read_file	48	static
+fat32.c:153:15:list_files	40	static
