@@ -1,0 +1,4 @@
+timer.c:15:6:systick_init	32	static,ignoring_inline_asm
+timer.c:31:6:tick_increment	8	static
+timer.c:36:10:get_tick	8	static,ignoring_inline_asm
+timer.c:44:6:delay	24	static

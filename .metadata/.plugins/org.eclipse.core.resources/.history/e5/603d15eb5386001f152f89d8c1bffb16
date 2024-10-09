@@ -1,0 +1,35 @@
+/*
+ * kernel.c
+ *
+ *  Created on: 09-Oct-2024
+ *      Author: saka6
+ */
+#include "kernel.h"
+/*xpsr
+ * PC
+ * LR
+ * R12
+ * R3
+ * R2
+ * R1
+ * R0(TOP) GETS AUTOMATICALLY SAVED
+ */
+#define NUM_OF_THREADS	3
+#define STACK_SIZE		100
+
+struct tcb{
+	int32_t *stackPt;
+	struct tcb *nextPt;
+};
+
+typedef struct tcb tcbType;
+tcbType tcbs[NUM_OF_THREADS];
+tcbType *currentPt;
+
+int32_t TCB_STACK[NUM_OF_THREADS][STACK_SIZE];
+
+void osKernelStackInit(int i)
+{
+	TCB_STACK[i][STACK_SIZE - 1] = (1U<<21); //psr = thumb mode
+
+}

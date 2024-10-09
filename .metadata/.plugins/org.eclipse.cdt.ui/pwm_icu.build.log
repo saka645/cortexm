@@ -1,0 +1,10 @@
+21:59:06 **** Incremental Build of configuration Debug for project pwm_icu ****
+make -j4 all 
+arm-none-eabi-size   pwm_icu.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4028	    108	   1996	   6132	   17f4	pwm_icu.elf
+Finished building: default.size.stdout
+ 
+
+21:59:07 Build Finished. 0 errors, 0 warnings. (took 360ms)
+

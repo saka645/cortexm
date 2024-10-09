@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="_estack"/>
+		<item key="selection" value="printf"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="printf"/>
+			<item value="orr"/>
+			<item value="push"/>
 			<item value="_estack"/>
 			<item value="main"/>
 			<item value="switch_sp_to_psp"/>

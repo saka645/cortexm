@@ -1,0 +1,11 @@
+main.c:44:6:task1_main	16	static
+main.c:52:6:task2_main	16	static
+main.c:60:6:task3_main	16	static
+main.c:68:6:task4_main	16	static
+main.c:76:6:start_scheduler	24	static,ignoring_inline_asm
+main.c:115:10:get_current_psp	8	static
+main.c:120:6:save_current_psp	16	static
+main.c:124:6:init_task	24	static
+main.c:163:6:select_next_task	8	static
+main.c:172:30:SysTick_Handler	0	static,ignoring_inline_asm
+main.c:259:5:main	8	static

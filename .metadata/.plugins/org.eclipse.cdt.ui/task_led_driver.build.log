@@ -1,0 +1,10 @@
+14:48:51 **** Incremental Build of configuration Debug for project task_led_driver ****
+make -j4 all 
+arm-none-eabi-size   task_led_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5496	    120	   1776	   7392	   1ce0	task_led_driver.elf
+Finished building: default.size.stdout
+ 
+
+14:48:54 Build Finished. 0 errors, 0 warnings. (took 3s.17ms)
+

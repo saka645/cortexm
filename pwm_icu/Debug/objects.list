@@ -1,0 +1,6 @@
+"Src/main.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Src/tim.o"
+"Src/uart1.o"
+"Startup/startup_stm32f030r8tx.o"

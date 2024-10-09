@@ -1,0 +1,6 @@
+"Src/kernel.o"
+"Src/main.o"
+"Src/sysmem.o"
+"Src/timer.o"
+"Src/uart1.o"
+"Startup/startup_stm32f030r8tx.o"

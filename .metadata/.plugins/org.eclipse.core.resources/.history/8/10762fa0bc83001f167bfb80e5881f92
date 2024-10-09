@@ -1,0 +1,45 @@
+#include <stm32f0xx.h>
+#include <stdio.h>
+#include <uart1.h>
+#define TICK_HZ						1000U
+#define HSI_FREQ					8000000U//8MHZ
+#define SYSTICK_FREQ				HSI_FREQ
+#define SYSTICK_RELOAD_REG			0xE000E014U
+#define DUMMY_XPSR					0x01000000U
+
+extern void initialise_monitor_handles(void);
+char ms_cnt=0,sec_cnt=0;
+void systick_init(uint32_t tick)
+{
+	uint32_t *pSRVR = (uint32_t *)SYSTICK_RELOAD_REG;
+	uint32_t *pCTR = (uint32_t *)0xE000E010;
+	uint32_t count = HSI_FREQ/tick;
+	/*clear rvr*/
+	*pSRVR &= ~(0x00FFFFFF);
+	//LOAD THE VALUE//
+	*pSRVR = count-1;
+	/*enable counter*/
+	*pCTR |= 0x07;
+
+
+}
+int main()
+{
+	uart1_rx_interrupt_init();
+	initialise_monitor_handles();
+	printf("hello please enter A\n");
+	while(1)
+	{
+		//read_char = uart1_read();
+
+	}
+}
+void SysTick_Handler(void)
+{
+	if(ms_cnt++ >= 1000)
+	{
+		ms_cnt=0;
+		sec_cnt++;
+	}
+	}
+}

@@ -1,0 +1,3 @@
+tim.c:24:6:tim3_1hz_init	8	static
+tim.c:40:6:tim3_pc8_output_compare_init	8	static
+tim.c:69:6:tim1_a8_input_compare_init	8	static

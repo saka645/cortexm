@@ -1,4 +1,4 @@
-15:25:45 **** Incremental Build of configuration Debug for project task_schedular ****
+10:38:35 **** Incremental Build of configuration Debug for project task_schedular ****
 make -j4 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32F030R8Tx -DSTM32 -DSTM32F0 -DSTM32F0308_DISCO -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
 ../Src/main.c:40:1: warning: 'nacked' attribute directive ignored [-Wattributes]
@@ -21,18 +21,18 @@ arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32
    52 |  task_handlers[3] = (uint32_t *)task4_handler;
       |                   ^
 ../Src/main.c: At top level:
-../Src/main.c:141:1: warning: 'nacked' attribute directive ignored [-Wattributes]
-  141 | {
+../Src/main.c:143:1: warning: 'nacked' attribute directive ignored [-Wattributes]
+  143 | {
       | ^
-../Src/main.c:181:1: warning: 'nacked' attribute directive ignored [-Wattributes]
-  181 | {
+../Src/main.c:183:1: warning: 'nacked' attribute directive ignored [-Wattributes]
+  183 | {
       | ^
-C:\Users\saka6\AppData\Local\Temp\ccfkoJ4E.s: Assembler messages:
-C:\Users\saka6\AppData\Local\Temp\ccfkoJ4E.s:420: Error: selected processor does not support `stmdb R0!,{R4-R14}' in Thumb mode
-C:\Users\saka6\AppData\Local\Temp\ccfkoJ4E.s:436: Error: lo register required -- `ldmia R0!,{R4-R14}'
-C:\Users\saka6\AppData\Local\Temp\ccfkoJ4E.s:681: Error: invalid register list to push/pop instruction -- `pop {LR}'
+C:\Users\saka6\AppData\Local\Temp\ccaciLSr.s: Assembler messages:
+C:\Users\saka6\AppData\Local\Temp\ccaciLSr.s:420: Error: selected processor does not support `stmdb R0!,{R4-R14}' in Thumb mode
+C:\Users\saka6\AppData\Local\Temp\ccaciLSr.s:436: Error: lo register required -- `ldmia R0!,{R4-R14}'
+C:\Users\saka6\AppData\Local\Temp\ccaciLSr.s:681: Error: invalid register list to push/pop instruction -- `pop {LR}'
 make: *** [Src/subdir.mk:25: Src/main.o] Error 1
 "make -j4 all" terminated with exit code 2. Build might be incomplete.
 
-15:25:45 Build Failed. 4 errors, 8 warnings. (took 641ms)
+10:38:36 Build Failed. 4 errors, 8 warnings. (took 703ms)
 

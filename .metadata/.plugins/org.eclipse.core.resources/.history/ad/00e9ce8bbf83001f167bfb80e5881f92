@@ -1,0 +1,32 @@
+/*
+ * timer.c
+ *
+ *  Created on: 06-Oct-2024
+ *      Author: saka6
+ */
+
+
+#include <timer.h>
+void tick_increment()
+{
+	g_cur_tick += tick_freq;
+}
+
+uint32_t get_tick()
+{
+	__disable_irq();
+	g_cur_tick_p = g_cur_tick;
+	__enable_irq();
+	return g_cur_tick_p;
+}
+
+void delay(uint32_t del)
+{
+	uint32_t tick_start = get_tick();
+	uint32_t wait = del;
+	if(wait < MAX_DELAY)
+	{
+		wait += tick_freq;
+	}
+	while((get_tick()-tick_start)<wait);
+}

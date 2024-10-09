@@ -7,4 +7,6 @@
 			<item value="org.eclipse.cdt.ui.importWizardCategory"/>
 		</list>
 	</section>
+	<section name="NewWizardAction">
+	</section>
 </section>

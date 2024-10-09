@@ -1,9 +1,0 @@
-int num_fun();
-int value;
-void main(void)
-{
-	while(1)
-	{
-		value = num_fun();
-	}
-}

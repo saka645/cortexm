@@ -1,0 +1,21 @@
+21:28:45 **** Incremental Build of configuration Debug for project round_robin ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/kernel.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32F030R8Tx -DSTM32 -DSTM32F0 -DSTM32F0308_DISCO -DSTM32F030x8 -c -I../Inc -I"C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/chip_headers/CMSIS/Include" -I"C:/Users/saka6/STM32CubeIDE/workspace_1.6.1/chip_headers/CMSIS/Device/ST/STM32F0xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/kernel.d" -MT"Src/kernel.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/kernel.o"
+../Src/kernel.c: In function 'osKernelLaunch':
+../Src/kernel.c:100:2: warning: implicit declaration of function 'osSchedulerLaunch' [-Wimplicit-function-declaration]
+  100 |  osSchedulerLaunch();
+      |  ^~~~~~~~~~~~~~~~~
+../Src/kernel.c: In function 'SysTick_Handler':
+../Src/kernel.c:107:24: error: expected ';' before ':' token
+  107 |  __asm("PUSH {R4-R11}"):
+      |                        ^
+      |                        ;
+../Src/kernel.c: In function 'osKernelAddThreads':
+../Src/kernel.c:79:1: warning: control reaches end of non-void function [-Wreturn-type]
+   79 | }
+      | ^
+make: *** [Src/subdir.mk:31: Src/kernel.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+21:28:46 Build Failed. 2 errors, 2 warnings. (took 515ms)
+
